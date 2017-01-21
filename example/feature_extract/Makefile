@@ -1,5 +1,7 @@
-CXX=g++
-BLAS=-L /opt/openblas/lib -lopenblas -DMSHADOW_USE_CBLAS=1 -DMSHADOW_USE_MKL=0 
+CC=gcc-4.8
+CXX=g++-4.8
+
+BLAS=-L/opt/intel/mkl/lib/intel64 -lmkl_intel_lp64 -lmkl_intel_thread -lmkl_core -lmkl_blas95_lp64 -DMSHADOW_USE_CBLAS=0 -DMSHADOW_USE_MKL=1 
 CUDA=-DMSHADOW_USE_CUDA=1
 OPENCV_CFLAGS=`pkg-config --cflags opencv`
 OPENCV_LDFLAGS=`pkg-config --libs opencv`
